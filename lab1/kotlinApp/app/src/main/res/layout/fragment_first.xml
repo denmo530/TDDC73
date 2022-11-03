@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment"
+    >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/dog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        tools:ignore="ImageContrastCheck" />
+
+   <GridLayout
+        android:id="@+id/grid1"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:useDefaultMargins="true"
+    >
+    <Button
+        style="@style/button"
+        android:id="@+id/button1"
+        android:text="Button"
+        android:layout_marginRight="40dp"
+        />
+    <Button
+        android:id="@+id/button2"
+        android:text="Button"
+        style="@style/button"
+        android:layout_marginLeft="40dp"
+
+        />
+    <Button
+        style="@style/button"
+
+        android:id="@+id/button3"
+        android:text="Button"
+        android:layout_marginRight="40dp"
+
+        />
+    <Button
+        style="@style/button"
+
+        android:id="@+id/button4"
+        android:text="Button"
+        android:layout_marginLeft="40dp"
+        />
+</GridLayout>
+
+    <GridLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="1"
+        app:layout_constraintTop_toBottomOf="@+id/grid1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="E-mail">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:backgroundTint="#cd1b60"
+            android:textCursorDrawable="@null"
+            android:textColor="#000"
+            />
+
+    </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
