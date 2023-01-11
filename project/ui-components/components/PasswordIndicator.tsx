@@ -41,9 +41,7 @@ const passwordIndicator: React.FC<Props> = ({
     let score = 0;
 
     passwordRegexChecks.forEach((regex, i) => {
-      if (new RegExp(regex).test(password)) 
-        score += 1;
-      else 
+      if (new RegExp(regex).test(password)) score += 1;
     });
 
     setBarWidth((score * 100) / passwordRegexChecks.length);
@@ -54,11 +52,6 @@ const passwordIndicator: React.FC<Props> = ({
   useEffect(() => {
     passwordStrengthCalc(password);
   }, [password]);
-
-  const errorHandler = (password, ) => {
-    let errorString = ""; 
-    if (password)
-  }
 
   return (
     <View style={styles.container}>
@@ -89,7 +82,6 @@ const passwordIndicator: React.FC<Props> = ({
         />
       </View>
       <Text>{barWidth > 0 && label}</Text>
-      {error && <p>{error}</p>}
     </View>
   );
 };
