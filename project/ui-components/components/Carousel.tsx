@@ -7,24 +7,21 @@ import {
   Dimensions,
   ImageBackground,
   TouchableOpacity,
-  Text,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 type Props = {
   images: any[];
-  height: number;
-  width: number;
 };
 
 const MAX_WIDTH = Dimensions.get("screen").width;
 
-const Carousel: React.FC<Props> = ({ images, height, width }) => {
+const Carousel: React.FC<Props> = ({ images }) => {
   const animation = useRef(new Animated.Value(0));
   const [currentImage, setCurrentImage] = useState(0);
 
   const animationHandlerLeft = () => {
-    let newCurrentImage = 1;
+    let newCurrentImage = 0;
     if (currentImage == 0) {
       newCurrentImage = images.length - 1;
     } else {
@@ -66,8 +63,8 @@ const Carousel: React.FC<Props> = ({ images, height, width }) => {
                 styles.selectionStyle,
                 styles.image,
                 {
-                  height: height || 500,
-                  width: width || Dimensions.get("screen").width,
+                  height: 500,
+                  width: Dimensions.get("screen").width,
                 },
               ]}
               source={image.image}
